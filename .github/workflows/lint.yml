@@ -6,6 +6,9 @@ on:
       - stable*
   pull_request:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   lint-js:
     runs-on: ubuntu-latest
@@ -67,4 +70,3 @@ jobs:
       uses: korelstar/phplint-problem-matcher@master
     - name: lint PHP
       run: make -k lint-php
-
